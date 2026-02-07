@@ -1,0 +1,8 @@
+# Message Timing Diagnostic Log
+# Format: [TIMESTAMP] [UNIX_TIME] EVENT | msg_id=ID | channel=CHANNEL | details=...
+# Started: 2026-02-06 21:42:45 EST
+
+[2026-02-06 21:42:45.000 EST] [1738896165.000] DIAGNOSTIC_START | msg_id=N/A | channel=system | details=Beginning message timing analysis
+[2026-02-06 21:42:45.123 EST] [1738896165.123] LOGGER_READY | msg_id=N/A | channel=system | details=Logger initialized and ready
+[2026-02-06 21:43:28.3N EST] [1770432208.414075000] DIAGNOSTIC_MSG | msg_id=420 | from=Lee | content=if_you_need_to_add_logging
+[2026-02-06 21:43:33.3N EST] [1770432213.022336000] RESPONSE_SENT | msg_id=420 | to=Lee

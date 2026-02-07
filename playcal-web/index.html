@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayCal - Playdate & Family Calendar App | Schedule Playdates Without the Texting</title>
+    <meta name="description" content="PlayCal eliminates playdate scheduling chaos. Share availability, track party invitations from Evite & Paperless Post, and sync schedules with co-parents. Stop texting, start scheduling.">
+    <meta name="keywords" content="playdate scheduler, kids social calendar, family scheduling app, co-parent calendar, party invitation tracker, playdate app, parent scheduling">
+    <meta property="og:title" content="PlayCal - The Playdate & Family Calendar App">
+    <meta property="og:description" content="Schedule playdates without the texting hell. Track party invitations. Sync with co-parents.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://play-cal.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📅</text></svg>">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <span class="logo-icon">📅</span>
+                <span class="logo-text">PlayCal</span>
+            </a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#for-coparents">Co-Parents</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <a href="#waitlist" class="btn btn-primary nav-cta">Join Waitlist</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge">🎉</span>
+                    <span>Launching Spring 2026</span>
+                </div>
+                <h1>Stop Texting.<br>Start Scheduling.</h1>
+                <p class="hero-subtitle">The playdate scheduler that eliminates the chaos. Share your child's availability, track party invitations from Evite & Paperless Post, and keep co-parents in sync—all in one place.</p>
+                <div class="hero-cta">
+                    <a href="#waitlist" class="btn btn-primary btn-large">Get Early Access</a>
+                    <a href="#how-it-works" class="btn btn-secondary btn-large">See How It Works</a>
+                </div>
+                <div class="hero-trust">
+                    <div class="trust-avatars">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=parent1" alt="Parent" class="avatar">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=parent2" alt="Parent" class="avatar">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=parent3" alt="Parent" class="avatar">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=parent4" alt="Parent" class="avatar">
+                    </div>
+                    <p><strong>2,000+ parents</strong> already on the waitlist</p>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="phone-mockup">
+                    <div class="phone-screen">
+                        <div class="app-header">
+                            <span class="app-title">PlayCal</span>
+                            <span class="app-date">Today</span>
+                        </div>
+                        <div class="app-content">
+                            <div class="playdate-card">
+                                <div class="playdate-time">3:00 PM</div>
+                                <div class="playdate-info">
+                                    <strong>Playdate with Emma</strong>
+                                    <span>At Central Park • 2 hours</span>
+                                </div>
+                                <div class="playdate-status confirmed">✓</div>
+                            </div>
+                            <div class="playdate-card party">
+                                <div class="party-badge">🎂</div>
+                                <div class="playdate-info">
+                                    <strong>Lucas's Birthday Party</strong>
+                                    <span>Saturday, 2:00 PM • RSVP by Friday</span>
+                                </div>
+                                <div class="playdate-status pending">!</div>
+                            </div>
+                            <div class="availability-card">
+                                <div class="avail-header">
+                                    <span>👧 Sarah's Availability</span>
+                                    <span class="avail-status">Visible to 5 families</span>
+                                </div>
+                                <div class="avail-slots">
+                                    <span class="slot">Mon 3-6pm</span>
+                                    <span class="slot">Wed 3-6pm</span>
+                                    <span class="slot">Sat 9-12pm</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Pain Points Section -->
+    <section class="pain-points">
+        <div class="container">
+            <h2>Sound Familiar?</h2>
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <div class="pain-icon">📱</div>
+                    <h3>The Group Chat Nightmare</h3>
+                    <p>Texting 15 parents to find one playdate slot. Endless "How about Tuesday?" "No, Tuesday doesn't work." back-and-forth.</p>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-icon">😰</div>
+                    <h3>The Missed Party</h3>
+                    <p>That Evite invitation went to your spam folder. Your kid missed their friend's birthday party and you feel terrible.</p>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-icon">😤</div>
+                    <h3>The Co-Parent Confusion</h3>
+                    <p>Your ex accepted a playdate you knew nothing about. You show up to pick up your kid and they're not there.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Features -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Features</span>
+                <h2>Everything You Need for Family Scheduling</h2>
+                <p>No more juggling apps, calendars, and group texts. PlayCal brings it all together.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card large">
+                    <div class="feature-content">
+                        <div class="feature-icon purple">📅</div>
+                        <h3>Availability-Based Playdates</h3>
+                        <p>Set your child's available windows (e.g., "Weekdays 3-6pm"). Other parents see when you're free and request playdates in one tap. No more back-and-forth texting.</p>
+                        <ul class="feature-list">
+                            <li>Recurring availability schedules</li>
+                            <li>One-time exceptions for busy days</li>
+                            <li>Privacy controls—only visible to families you invite</li>
+                        </ul>
+                    </div>
+                    <div class="feature-visual">
+                        <div class="mock-card">
+                            <div class="mock-header">Request Playdate</div>
+                            <div class="mock-row">
+                                <span>👧 Emily + 👦 Jake</span>
+                            </div>
+                            <div class="mock-avail">
+                                <strong>Available This Week:</strong>
+                                <div class="mock-slots">
+                                    <span class="mock-slot selected">Wed 3-5pm</span>
+                                    <span class="mock-slot">Sat 10-12pm</span>
+                                </div>
+                            </div>
+                            <button class="mock-btn">Send Request</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon teal">🎉</div>
+                    <h3>Party Invitation Sync</h3>
+                    <p>Forward Evite and Paperless Post emails to PlayCal. We extract the details, set reminders, and alert you before RSVP deadlines. Never miss a party again.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon purple">👨‍👩‍👧</div>
+                    <h3>Co-Parent Sync</h3>
+                    <p>Share schedules and invitations with your co-parent, spouse, or caregivers. Everyone sees the same calendar. No more "I didn't know about that."</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon teal">💬</div>
+                    <h3>In-App Messaging</h3>
+                    <p>Quick coordination without giving out your phone number. "Running 10 minutes late" or "Can we switch to the park?"</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon purple">📍</div>
+                    <h3>Flexible Locations</h3>
+                    <p>Your place, their place, or a neutral location like the park. Everyone knows where to go.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon teal">📲</div>
+                    <h3>Calendar Integration</h3>
+                    <p>Sync with Google Calendar, Apple Calendar, and Outlook. Playdates appear everywhere you need them.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">How It Works</span>
+                <h2>Schedule a Playdate in 3 Taps</h2>
+            </div>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Set Availability</h3>
+                        <p>Tell us when your child is free for playdates. Set recurring schedules like "Weekdays 3-6pm" or one-off availability.</p>
+                        <div class="step-visual">
+                            <div class="mini-avail">
+                                <span class="mini-slot active">Mon 3-6pm</span>
+                                <span class="mini-slot active">Wed 3-6pm</span>
+                                <span class="mini-slot active">Fri 3-6pm</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Connect with Parents</h3>
+                        <p>Invite parents you know and trust. They can see your child's availability (if you choose) and request playdates.</p>
+                        <div class="step-visual">
+                            <div class="mini-parents">
+                                <span class="mini-avatar">👩</span>
+                                <span class="mini-avatar">👨</span>
+                                <span class="mini-avatar">👩</span>
+                                <span class="mini-add">+</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Approve & Schedule</h3>
+                        <p>Get playdate requests, approve with one tap, and it automatically goes on your calendar. Everyone gets notified.</p>
+                        <div class="step-visual">
+                            <div class="mini-request">
+                                <span>Playdate request from Sarah</span>
+                                <div class="mini-actions">
+                                    <span class="mini-yes">✓</span>
+                                    <span class="mini-no">✗</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Party Invitations Feature -->
+    <section class="party-feature">
+        <div class="container">
+            <div class="party-content">
+                <div class="party-text">
+                    <span class="section-tag">Never Miss a Party</span>
+                    <h2>Party Invitation Tracking</h2>
+                    <p>Evite and Paperless Post invitations get lost in email chaos. Forward them to PlayCal and we'll:</p>
+                    <ul class="party-list">
+                        <li><strong>Extract all the details</strong> — date, time, location, RSVP deadline</li>
+                        <li><strong>Set smart reminders</strong> — alert you 7 days and 1 day before RSVP deadlines</li>
+                        <li><strong>Share with your co-parent</strong> — they see it too, no more "Did you RSVP?"</li>
+                        <li><strong>Track your response</strong> — know at a glance which parties you're attending</li>
+                    </ul>
+                    <a href="#waitlist" class="btn btn-primary">Get Party Tracking</a>
+                </div>
+                <div class="party-visual">
+                    <div class="email-mockup">
+                        <div class="email-header">
+                            <span>From: invitations@evite.com</span>
+                            <span>Subject: You're Invited! Lucas's 7th Birthday</span>
+                        </div>
+                        <div class="email-body">
+                            <p>🎂 You're invited to Lucas's 7th Birthday Party!</p>
+                            <p><strong>When:</strong> Saturday, March 15th at 2:00 PM</p>
+                            <p><strong>Where:</strong> Jump Zone, 123 Main Street</p>
+                            <p><strong>RSVP by:</strong> March 8th</p>
+                        </div>
+                        <div class="email-forward">
+                            <span>→ Forward to your-playcal@play-cal.com</span>
+                        </div>
+                    </div>
+                    <div class="arrow-down">↓</div>
+                    <div class="playcal-card">
+                        <div class="card-header">
+                            <span class="card-icon">🎉</span>
+                            <span class="card-title">Party Tracked!</span>
+                        </div>
+                        <div class="card-body">
+                            <strong>Lucas's 7th Birthday</strong>
+                            <p>Sat, Mar 15 • 2:00 PM</p>
+                            <p>Jump Zone • RSVP by Mar 8</p>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-yes">Going</button>
+                            <button class="btn-no">Can't Go</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Co-Parents Section -->
+    <section id="for-coparents" class="coparents">
+        <div class="container">
+            <div class="coparents-content">
+                <div class="coparents-text">
+                    <span class="section-tag">For Co-Parents</span>
+                    <h2>Stay in Sync, Reduce Conflict</h2>
+                    <p>Coordinating across two households is hard. PlayCal makes it easier without the heavy-handed approach of court-mandated apps.</p>
+                    
+                    <div class="coparent-benefits">
+                        <div class="benefit">
+                            <span class="benefit-icon">👀</span>
+                            <div>
+                                <strong>Shared Visibility</strong>
+                                <p>Both parents see the same playdates, parties, and schedules. No more surprises.</p>
+                            </div>
+                        </div>
+                        <div class="benefit">
+                            <span class="benefit-icon">📤</span>
+                            <div>
+                                <strong>Share Invitations</strong>
+                                <p>Forward a party invite to PlayCal and your co-parent sees it automatically.</p>
+                            </div>
+                        </div>
+                        <div class="benefit">
+                            <span class="benefit-icon">🔕</span>
+                            <div>
+                                <strong>Lightweight</strong>
+                                <p>No messages stored "for court." Just practical coordination between parents.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="coparents-quote">
+                    <blockquote>
+                        "Finally, an app that helps us coordinate without making every interaction feel like a legal proceeding."
+                    </blockquote>
+                    <cite>— Marcus, co-parent of 10-year-old Lily</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="comparison">
+        <div class="container">
+            <h2>Why Parents Choose PlayCal</h2>
+            <div class="comparison-table">
+                <div class="table-header">
+                    <span class="feature-col">Feature</span>
+                    <span class="playcal-col">PlayCal</span>
+                    <span class="other-col">Group Text</span>
+                    <span class="other-col">Google Calendar</span>
+                    <span class="other-col">Co-Parent Apps</span>
+                </div>
+                <div class="table-row">
+                    <span class="feature-col">Playdate scheduling</span>
+                    <span class="playcal-col check">✓</span>
+                    <span class="other-col cross">✗</span>
+                    <span class="other-col partial">~</span>
+                    <span class="other-col cross">✗</span>
+                </div>
+                <div class="table-row">
+                    <span class="feature-col">Availability sharing</span>
+                    <span class="playcal-col check">✓</span>
+                    <span class="other-col cross">✗</span>
+                    <span class="other-col cross">✗</span>
+                    <span class="other-col cross">✗</span>
+                </div>
+                <div class="table-row">
+                    <span class="feature-col">Party invitation tracking</span>
+                    <span class="playcal-col check">✓</span>
+                    <span class="other-col cross">✗</span>
+                    <span class="other-col cross">✗</span>
+                    <span class="other-col cross">✗</span>
+                </div>
+                <div class="table-row">
+                    <span class="feature-col">Co-parent sync</span>
+                    <span class="playcal-col check">✓</span>
+                    <span class="other-col cross">✗</span>
+                    <span class="other-col partial">~</span>
+                    <span class="other-col check">✓</span>
+                </div>
+                <div class="table-row">
+                    <span class="feature-col">No court mandate needed</span>
+                    <span class="playcal-col check">✓</span>
+                    <span class="other-col check">✓</span>
+                    <span class="other-col check">✓</span>
+                    <span class="other-col cross">✗</span>
+                </div>
+                <div class="table-row">
+                    <span class="feature-col">Price</span>
+                    <span class="playcal-col price">$5-10/mo</span>
+                    <span class="other-col price">Free</span>
+                    <span class="other-col price">Free</span>
+                    <span class="other-col price">$150/yr</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waitlist Section -->
+    <section id="waitlist" class="waitlist">
+        <div class="container">
+            <div class="waitlist-content">
+                <h2>Be the First to PlayCal</h2>
+                <p>Join 2,000+ parents on the waitlist. Get early access and a special launch discount.</p>
+                
+                <form class="waitlist-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-row">
+                        <input type="email" name="email" placeholder="Enter your email" required class="form-input">
+                        <select name="parent_type" class="form-select">
+                            <option value="">I'm a...</option>
+                            <option value="married">Married parent</option>
+                            <option value="coparent">Co-parent</option>
+                            <option value="single">Single parent</option>
+                            <option value="caregiver">Caregiver</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large btn-full">Join the Waitlist</button>
+                    <p class="form-note">No spam. Unsubscribe anytime. We respect your privacy.</p>
+                </form>
+
+                <div class="waitlist-features">
+                    <span class="waitlist-feature">✓ Early access</span>
+                    <span class="waitlist-feature">✓ Launch discount (50% off)</span>
+                    <span class="waitlist-feature">✓ Founding member badge</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>How much does PlayCal cost?</h3>
+                    <p>PlayCal will be $5-10/month per family after launch. Join the waitlist now for 50% off your first year. We're still finalizing pricing based on parent feedback.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Is my child's information private?</h3>
+                    <p>Absolutely. Your child's availability is only visible to parents you explicitly invite. We don't have public profiles or discovery features. We're COPPA, GDPR, and CCPA compliant.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Do both parents need to pay?</h3>
+                    <p>No. One subscription covers your entire family, including co-parents and caregivers you invite. They get full access at no extra cost.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>How does party invitation tracking work?</h3>
+                    <p>Simply forward your Evite or Paperless Post emails to your unique PlayCal address. Our AI extracts the event details and adds it to your calendar with RSVP reminders.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Is this a court-mandated co-parenting app?</h3>
+                    <p>No. PlayCal is designed for social scheduling, not legal documentation. If you need court-admissible records, apps like OurFamilyWizard are better suited.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>When will PlayCal launch?</h3>
+                    <p>We're targeting Spring 2026. Waitlist members will get early access to beta test the app before public launch.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span class="logo-icon">📅</span>
+                        <span class="logo-text">PlayCal</span>
+                    </a>
+                    <p>The playdate & family calendar app. Stop texting, start scheduling.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#how-it-works">How It Works</a></li>
+                            <li><a href="#waitlist">Join Waitlist</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>For Parents</h4>
+                        <ul>
+                            <li><a href="#for-coparents">Co-Parents</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Terms</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 PlayCal. All rights reserved.</p>
+                <p class="footer-tagline">Made with ❤️ for busy parents everywhere</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

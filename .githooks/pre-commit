@@ -1,0 +1,126 @@
+#!/bin/bash
+#
+# Pre-commit hook to prevent committing secrets/API keys
+# Install: cp .githooks/pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
+#
+
+echo "🔍 Scanning for secrets..."
+
+# Patterns to detect secrets
+PATTERNS=(
+    # API Keys
+    "sk-[a-zA-Z0-9]{20,}"                    # OpenAI, Stripe, etc
+    "ghp_[a-zA-Z0-9]{36}"                    # GitHub tokens
+    "gho_[a-zA-Z0-9]{36}"                    # GitHub OAuth
+    "ghu_[a-zA-Z0-9]{36}"                    # GitHub user tokens
+    "ghs_[a-zA-Z0-9]{36}"                    # GitHub server-to-server
+    "ghr_[a-zA-Z0-9]{36}"                    # GitHub refresh tokens
+    "xox[baprs]-[0-9a-zA-Z-]{10,48}"         # Slack tokens
+    "[0-9a-zA-Z]{32}-us[0-9]{1,2}"           # Mailchimp API keys
+    "key-[0-9a-zA-Z]{32}"                    # Mailgun API keys
+    "sk_live_[0-9a-zA-Z]{24}"                # Stripe live keys
+    "sk_test_[0-9a-zA-Z]{24}"                # Stripe test keys
+    "SG\.[a-zA-Z0-9]{22}\.[a-zA-Z0-9]{43}"   # SendGrid API keys
+    "[A-Za-z0-9_]{32,}"                      # Generic 32+ char secrets
+    
+    # Database URLs with passwords
+    "postgres://[^:]+:[^@]+@"                # PostgreSQL with password
+    "mysql://[^:]+:[^@]+@"                   # MySQL with password
+    "mongodb(\+srv)?://[^:]+:[^@]+@"         # MongoDB with password
+    
+    # JWT tokens
+    "eyJ[a-zA-Z0-9_-]*\.eyJ[a-zA-Z0-9_-]*\.[a-zA-Z0-9_-]*"
+    
+    # AWS
+    "AKIA[0-9A-Z]{16}"                       # AWS Access Key ID
+    
+    # Private keys
+    "-----BEGIN (RSA |DSA |EC |OPENSSH )?PRIVATE KEY-----"
+    
+    # Password patterns
+    "password\s*=\s*['\"][^'\"]+['\"]"         # password = "value"
+    "passwd\s*=\s*['\"][^'\"]+['\"]"          # passwd = "value"
+    "pwd\s*=\s*['\"][^'\"]+['\"]"            # pwd = "value"
+    "api[_-]?key\s*=\s*['\"][^'\"]+['\"]"   # api_key = "value"
+    "api[_-]?secret\s*=\s*['\"][^'\"]+['\"]" # api_secret = "value"
+    "token\s*=\s*['\"][^'\"]+['\"]"        # token = "value"
+    
+    # Environment files
+    "\.env$"
+    "\.env\.local$"
+    "\.env\.production$"
+    "\.env\.development$"
+    "credentials\.env$"
+    "secrets\.json$"
+    "secrets\.yaml$"
+    "secrets\.yml$"
+)
+
+# Files to always block
+BLOCKED_FILES=(
+    ".env"
+    ".env.local"
+    ".env.production"
+    ".env.development"
+    ".env.*.local"
+    "credentials.env"
+    "secrets.json"
+    "secrets.yaml"
+    "secrets.yml"
+    ".aws/credentials"
+    ".ssh/id_rsa"
+    ".ssh/id_dsa"
+    ".ssh/id_ecdsa"
+    ".ssh/id_ed25519"
+)
+
+# Get list of staged files
+STAGED_FILES=$(git diff --cached --name-only)
+
+FOUND_SECRETS=0
+BLOCKED_FOUND=""
+
+# Check for blocked files
+for file in $STAGED_FILES; do
+    for blocked in "${BLOCKED_FILES[@]}"; do
+        if [[ "$file" == *"$blocked"* ]] || [[ "$file" == "$blocked" ]]; then
+            echo "❌ BLOCKED FILE: $file"
+            echo "   Environment/credential files should never be committed!"
+            BLOCKED_FOUND="$BLOCKED_FOUND\n$file"
+            FOUND_SECRETS=1
+        fi
+    done
+done
+
+# Check staged content for secrets
+for pattern in "${PATTERNS[@]}"; do
+    MATCHES=$(git diff --cached -U0 | grep -E "^\+.*$pattern" | grep -v "^+++" | head -5)
+    if [ -n "$MATCHES" ]; then
+        echo ""
+        echo "⚠️  POTENTIAL SECRET DETECTED:"
+        echo "$MATCHES"
+        echo ""
+        FOUND_SECRETS=1
+    fi
+done
+
+if [ $FOUND_SECRETS -eq 1 ]; then
+    echo ""
+    echo "🛑 COMMIT BLOCKED!"
+    echo ""
+    echo "Potential secrets or credential files detected."
+    echo ""
+    if [ -n "$BLOCKED_FOUND" ]; then
+        echo "Blocked files:$BLOCKED_FOUND"
+        echo ""
+    fi
+    echo "If these are false positives, you can:"
+    echo "1. Add to .gitignore if they should be ignored"
+    echo "2. Use 'git commit --no-verify' to skip (NOT RECOMMENDED)"
+    echo "3. Move secrets to environment variables or secret managers"
+    echo ""
+    exit 1
+fi
+
+echo "✅ No secrets detected. Proceeding with commit."
+exit 0
